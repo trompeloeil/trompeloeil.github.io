@@ -1,0 +1,13 @@
+---
+layout: single
+title: Oopsie
+---
+
+just trying to see if I understand
+
+```cpp
+#include <trompeloeil.hpp>
+
+int main() {
+}
+```

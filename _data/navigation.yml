@@ -1,0 +1,20 @@
+main:
+  - title: About
+    url: about
+    
+
+docs:
+  - title: "Get"
+    children:
+      - title: GitHub
+        url: https://github.com/rollbear/trompeloeil
+      - title: Conan
+        url: https://conan.io/center/trompeloeil
+  - title: "Latest documentation"
+    children:
+      - title: "CookBook"
+        url: "https://github.com/rollbear/trompeloeil/blob/main/docs/CookBook.md"
+      - title: "Reference"
+        url: "https://github.com/rollbear/trompeloeil/blob/main/docs/reference.md"
+      - title: "FAQ"
+        url: "https://github.com/rollbear/trompeloeil/blob/main/docs/FAQ.md"
