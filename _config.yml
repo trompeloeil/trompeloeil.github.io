@@ -31,8 +31,11 @@ github_username:  rollbear
 
 # Build settings
 theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-include-cache
 
 logo: "/assets/images/trompeloeil-logo.png"
 
@@ -43,7 +46,7 @@ defaults:
       sidebar:
         - title: "Get merch!"
           text: "[![oiea](/assets/images/T-example.png)](https://spreadshirt.com)
-from [spreatshirt.com](https://spreadshirt.com)"
+from [spreadshirt.com](https://spreadshirt.com)"
           #image: "/assets/images/trompeloeil-logo.png"
         - nav: "docs"
 
