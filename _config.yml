@@ -45,7 +45,7 @@ defaults:
       show_date: true
       sidebar:
         - title: "Get merch!"
-          text: "[![oiea](/assets/images/T-example.png)](https://spreadshirt.com)
+          text: "[![T-shirt print](/assets/images/T-example.png)](https://spreadshirt.com)
 from [spreadshirt.com](https://spreadshirt.com)"
           #image: "/assets/images/trompeloeil-logo.png"
         - nav: "docs"

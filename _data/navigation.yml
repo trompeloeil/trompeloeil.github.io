@@ -4,11 +4,11 @@ main:
     
 
 docs:
-  - title: "Get"
+  - title: "Get Trompeloeil"
     children:
-      - title: GitHub
+      - title: from GitHub
         url: https://github.com/rollbear/trompeloeil
-      - title: Conan
+      - title: from Conan
         url: https://conan.io/center/trompeloeil
   - title: "Latest documentation"
     children:
