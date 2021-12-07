@@ -1,0 +1,55 @@
+---
+layout: single
+title: Release v42
+---
+
+v42 catches up with a long backlog of bugfixes and internal improvements. Get it
+[here](https://github.com/rollbear/trompeloeil/releases/tag/v42).
+
+* Fixed issue [264](https://github.com/rollbear/trompeloeil/issues/264):
+  Sequence objects did not correctly report `is_complete()`
+  when there were living, but satisfied, expectations remaining.
+  Thank you Václav Kubernát for reporting.
+
+* Fixed issue [259](https://github.com/rollbear/trompeloeil/issues/259)
+  where `CMakeFiles.txt` wrongly installed *trompeloeil*
+  for projects that includes it. It is now an option. See the
+  [FAQ](https://github.com/rollbear/trompeloeil/blob/main/docs/FAQ.md#cmake)
+  for details. Thank you Ismail Pazarbasi for reporting and fixing.
+
+* Fixed issue [255](https://github.com/rollbear/trompeloeil/issues/255):
+  Hex dumps showed byte values <= 15(dec) wrong. 🤦 Thank you Stuart Dootson
+  for reporting.
+
+* Fixed issue [253](https://github.com/rollbear/trompeloeil/issues/253):
+  Resolve lingering warnings in early Clang compilers and
+  enable `-Wzero-as-null-pointer-constant` when compiling unit tests with
+  GCC and Clang.
+
+* Fixed issue [250](https://github.com/rollbear/trompeloeil/issues/250):
+  Warnings about zero argument variadic macros with
+  clang-msvc. Thank you u3shit for reporting and fixing.
+
+* Fixed issue [251](https://github.com/rollbear/trompeloeil/issues/251):
+  `trompeloeil::printer<>` customization point now supports
+  SFINAE expressions to constrain partial specializations. See
+  [Reference manual](https://github.com/rollbear/trompeloeil/blob/main/docs/reference.md#-trompeloeilprintert)
+  and [CookBook](https://github.com/rollbear/trompeloeil/blob/main/docs/CookBook.md#-customize-output-format-of-values)
+  for details. Thank you Christian Morales Vega for reporting.
+
+* Fixed bug where an expectation end of life was reported as an error
+  if it was included in a satisfied sequence. Thank you Andy Saul.
+
+* Use CMake internal `Threads::Threads` target where needed. Thank you
+  Martin Hořeňovský for reporting.
+
+* Added CMake install namespace. Thank you offa.
+
+* For CI builds, use github actions cacheing of built libc++ to shorten
+  build times.
+
+* Updated [Catch2](https://github.com/catchorg/Catch2) to version 2.13.7
+  to compile unit tests on systems with glibc >= 2.34.
+
+* Fixed issue [245](https://github.com/rollbear/trompeloeil/issues/245):
+  Modify cmake to build `thread_terror` on Windows with MSVC.
