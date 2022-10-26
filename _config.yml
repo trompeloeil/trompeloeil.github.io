@@ -9,8 +9,7 @@ twitter_username: bjorn_fahller
 github_username:  rollbear
 
 # Build settings
-theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
