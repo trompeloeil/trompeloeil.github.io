@@ -1,0 +1,25 @@
+---
+layout: single
+title: Release v43
+---
+
+v43 catches up with a long backlog of bugfixes and internal improvements. Get it
+[here](https://github.com/rollbear/trompeloeil/releases/tag/v43).
+
+* Added `static_assert` to `duck_typed_matcher`'s templatized conversion
+  function explaining why it should never be instantiated. Issue
+  [270](https://github.com/rollbear/trompeloeil/issues/270).
+
+* Added gcc-12 and clang++-15 to the CI build matrix
+
+* Fixed issue [272](https://github.com/rollbear/trompeloeil/issues/272): Support
+  *Catch2* piecemeal headers.
+
+* Fix issue [279](https://github.com/rollbear/trompeloeil/issues/279) where the
+  *doctest* adapter showed violation messages as hex addresses for most recent
+  releases of *doctest*. Thanks  SimonKagstrom for reporting.
+
+* Fixed an obscure bug where an expectation could match with a sequence object
+  that has run to completion.
+
+* Specify `ARCH_INDEPENDENT` when creating package version file in *CMake*.
