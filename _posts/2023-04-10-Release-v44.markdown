@@ -1,0 +1,24 @@
+---
+layout: single
+title: Release v44
+---
+
+v44 mostly improves messages and tool support. Get it
+[here](https://github.com/rollbear/trompeloeil/releases/tag/v44).
+
+* Fixed issue [293](https://github.com/rollbear/trompeloeil/issues/293):
+  Wildcard `_` could not match types that can be
+  constructed from any type. This fix unfortunately turns off conversion
+  warnings for `REQUIRE_CALL` and friends when building with `gcc`. Thank
+  you @TimonNoethlichs for reporting.
+
+* Fixed issue [296](https://github.com/rollbear/trompeloeil/issues/296):
+  Improved sequence violation message when `ALLOW_CALL`
+  is involved. Thank you Sigurður Sveinn Halldórsson for reporting.
+
+* Fixed `-Wunsafe-buffer-usage` warning from `clang-16`
+
+* `static_assert()` when trying to get a runtime value from any matcher
+
+* Bumped required CMake version to 3.14 or later. Thank you Luke Dennis
+  for reporting.
