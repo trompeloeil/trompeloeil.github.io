@@ -1,0 +1,17 @@
+---
+layout: single
+title: Release v45
+---
+
+v45 generalizes regex matchinng support, so that types like
+[`std::string_view`](https://en.cppreference.com/w/cpp/string/basic_string_view)
+can be used. Get it
+[here](https://github.com/rollbear/trompeloeil/releases/tag/v45).
+
+* Fixed issue [304](https://github.com/rollbear/trompeloeil/issues/304):
+  `regex` matcher could only match regular expressions against `const char*` and
+  [`std::string`](https://en.cppreference.com/w/cpp/string/basic_string).
+
+* Added adapter for
+  [QA Systems Cantata](https://www.qa-systems.com/tools/cantata/) unit test
+  framework. Thank you, Andreas Schätti for the contribution.
