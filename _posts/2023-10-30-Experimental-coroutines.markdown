@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Release v45
+title: Experimental support for coroutines
 ---
 
 There is a branch with experimental support for coroutines in *Trompeloeil*.
