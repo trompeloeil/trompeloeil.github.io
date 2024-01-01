@@ -1,0 +1,25 @@
+---
+layout: single
+title: v47 with smaller headers and non-experimental coroutines
+---
+
+v47 brings support for coroutines out of experimental status, and a header
+reorganization which can help reduce build times.
+
+* Coroutines are conditionally supported by the `__cpp_impl_coroutine`
+  feature test macro. There is no longer any need to define the
+  `TROMPELOEIL_EXPERIMENTAL_COROUTINES` macro in order to use coroutines
+  with Trompeloeil.
+
+* Split the monolithic `"trompeloeil.hpp"` into several smaller
+  headers. You can continue to `#include <trompeloeil.hpp>` as usual,
+  but you can also do more fine-grained `#include`, which may
+  improve build times. E.g.:
+
+      #include <trompeloeil/mock.hpp> // basic mock functionality
+      #include <trompeloeil/lifetime.hpp> // REQUIRE_DESTRUCTION etc.
+      #include <trompeloeil/matcher/re.hpp> // regular expressions
+
+  The reference manual says which header to include to get the
+  functionality for each item. If no header is mentioned, it is in
+  `<trompeleil/mock.hpp>`
