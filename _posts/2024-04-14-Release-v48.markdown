@@ -1,6 +1,6 @@
 ---
 layout: single
-title: v47 with smaller headers and non-experimental coroutines
+title: v48 with COM
 ---
 
 v48 brings fixups and support for COM by allowing mocks for STDMETHOD
