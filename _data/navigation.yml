@@ -20,3 +20,7 @@ docs:
         url: "https://github.com/rollbear/trompeloeil/blob/main/docs/FAQ.md"
 
   - title: <a href="https://www.buymeacoffee.com/bjornfahller"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" style="height:40px; width:168px;" alt="Buy me a coffee"/></a>
+
+  - title: Merch!
+    children:
+      - title: <a href="https://rollbear.creator-spring.com/listing/trompeloeil"><img src="/assets/images/T-sample.png" style="width:150px; height:75px"/></a>

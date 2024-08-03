@@ -1,0 +1,10 @@
+---
+layout: single
+title: Merch!
+---
+
+*Trompeloeil*'s 10 year anniversary is coming up  in October. Why not
+show your support for the C++ mocking framwork by
+wearing this stylish T-shirt (available in several styles and colours)?
+
+Buy it here: [![T-shirt](/assets/images/T-sample.png)](https://rollbear.creator-spring.com/listing/trompeloeil)
