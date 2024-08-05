@@ -7,4 +7,4 @@ title: Merch!
 show your support for the C++ mocking framwork by
 wearing this stylish T-shirt (available in several styles and colours)?
 
-Buy it here: [![T-shirt](/assets/images/T-sample.png)](https://rollbear.creator-spring.com/listing/trompeloeil)
+Buy it here: [![T-shirt](/assets/images/T-sample.png)](https://rollbear.creator-spring.com/)
