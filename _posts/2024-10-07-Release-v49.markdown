@@ -1,0 +1,75 @@
+---
+layout: single
+title: v49 with arity deduction, composable range matchers and runtime times
+---
+
+v49 marks the 10 year anniversary of Trompeloeil. The first ever commit to
+the repo was on 2014-10-12.
+
+New in v49 are:
+
+10 year anniversary release! 🎉
+
+* Added mocking macros that infers function arity from a trailing return
+  type syntax signature.
+
+      MAKE_MOCK(name, signature {, specifiers})
+      MAKE_CONST_MOCK(name, signature {, specifiers})
+      MAKE_STDMETHOD_MOCK(name, signature {, specifiers})
+
+  Note that these only work with trailing return type syntax. Examples
+  of specifiers are override, final and noexcept
+
+  The preprocessor is limited and can only handle nullary functions,
+  i.e. functions that do not accept any arguments, in some cases.
+
+  MSVC handles nullary functions when compiling with `/Zc:preprocessor`
+  with MSVC 19.40 (VS 17.10) or later.
+
+  Gcc and Clang always handles nullary functions when compiling with
+  C++20 or later, and when enabling a gcc extension by compiling with
+  `-std=gnu++11/14/17` and defining the macro `TROMPELOEIL_HAS_GCC_PP` before
+  `#include`:ing the trompeloeil headers.
+
+* Added `.RT_TIMES()` to exceptations, which works like `.TIMES()`
+  but where the limits are only known at runtime. Thank you
+  Dominic Koepke for submitting the implementation.
+
+* Added several new composable matchers.
+
+  * range matchers `range_includes(*elements*)`, `range_is(*elements*)`,
+    `range_is_permutation(*elements*)`, `range_all_of(*comparator*)`,
+    `range_none_of(*comparator*)`, `range_any_of(*comparator*)`,
+    `range_starts_with(*elements*)` and `range_ends_with(*elements*)`.
+
+    Use in expectations as:
+
+        REQUIRE_CALL(obj, vector_func(range_starts_with(2,3,5,8)));
+
+  * MEMBER_IS(ptr_to_mem, matcher). Use as:
+
+        REQUIRE_CALL(obj, func(MEMBER_IS(&type::height, gt(5)));
+
+  * `all_of(matchers)`, `any_of(matchers)`, `none_of(matchers)`. Use as:
+
+        REQUIRE_CALL(obj, func(any_of(-1, gt(0))));
+
+  These can be composed like:
+
+        REQUIRE_CALL(obj, func(range_all_of(
+                                 any_of(MEMBER_IS(&type::x, -1),
+                                        MEMBER_IS(&type::y, gt(0))))));
+
+  Thank you Artem for the suggestion.
+
+* When an expectation is constrained by several `.WITH()` clauses, a
+  violation report will only include the first failed condition,
+  short cirquiting the logic.
+
+  Example:
+
+      REQUIRE_CALL(obj, func(_))
+      .WITH(_1 != nullptr)
+      .WITH(*_1 == 0); // would be runtime crash on nullptr access
+
+  Thank you Örjan Gustavsson for the suggestion.
